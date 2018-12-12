@@ -29,6 +29,17 @@ Listing accounts:
 
 `./obcli accounts`
 
+```bash
+$ ./obcli accounts
+Open Banking CLI v0.0.1
+Accounts
+                       Id| Currency| Nickname|     Type|SubType
+ 500000000000000000000001|      GBP| xxxx0101| Personal|CurrentAccount
+ 500000000000000000000007|      GBP| xxxx0001| Business|CurrentAccount
+ 500000000000000000000009|      GBP| xxxx0003| Business|CurrentAccount
+ 
+$ 
+```
 
 ## Authorization SDK
 
