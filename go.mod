@@ -1,4 +1,4 @@
-module github.com/jmatosp/ob_security
+module github.com/jmatosp/obclient
 
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible

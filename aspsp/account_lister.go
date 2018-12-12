@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/google/uuid"
-	"github.com/jmatosp/ob_security/authorization"
+	"github.com/jmatosp/obclient/authorization"
 	"github.com/pkg/errors"
 	"io/ioutil"
 	"net/http"

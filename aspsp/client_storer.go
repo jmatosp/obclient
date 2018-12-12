@@ -2,7 +2,7 @@ package aspsp
 
 import (
 	"encoding/json"
-	"github.com/jmatosp/ob_security/authorization"
+	"github.com/jmatosp/obclient/authorization"
 	"github.com/pkg/errors"
 	"io/ioutil"
 	"os"
