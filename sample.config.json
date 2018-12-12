@@ -1,0 +1,17 @@
+{
+  "storageFolder": ".obcli",
+  "fapiFinancialId": "XXXXXXXXXXXXXXXXX",
+  "openidConfiguration": "https://bank.localhost/.well-known/openid-configuration",
+  "endpoints": "https://bank.localhost/open-banking/v3.0/aisp",
+  "softwareStatementID": "xxxxxxxxxx",
+  "softwareStatementName": "jwt",
+  "redirectUrl": "http://localhost:8081",
+  "sigPublicKeyFile": "sign.pem",
+  "sigPrivateKeyFile": "sign.key",
+  "cerFile": "transport.pem",
+  "keyFile": "transport.key",
+  "rootCAs": [
+    "root.crt",
+    "issuing.crt"
+  ]
+}
