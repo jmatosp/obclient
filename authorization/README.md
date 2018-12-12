@@ -1,4 +1,4 @@
-# Open Banking Authorization Go SDK
+# Open Banking Security Flow Go SDK
 
 Provides an easy access to register your software client and get user consent 
 
