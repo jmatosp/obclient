@@ -21,6 +21,18 @@ func NewSigner(certificate Certificate, methods []string) (Signer, error) {
 			return NewSingerWithMethod(certificate, jwt.SigningMethodPS256), nil
 		case "hs256":
 			return NewSingerWithMethod(certificate, jwt.SigningMethodHS256), nil
+		case "rs384":
+			return NewSingerWithMethod(certificate, jwt.SigningMethodRS384), nil
+		case "ps384":
+			return NewSingerWithMethod(certificate, jwt.SigningMethodPS384), nil
+		case "hs384":
+			return NewSingerWithMethod(certificate, jwt.SigningMethodHS384), nil
+		case "rs512":
+			return NewSingerWithMethod(certificate, jwt.SigningMethodRS512), nil
+		case "ps512":
+			return NewSingerWithMethod(certificate, jwt.SigningMethodPS512), nil
+		case "hs512":
+			return NewSingerWithMethod(certificate, jwt.SigningMethodHS512), nil
 		}
 	}
 	return nil, errors.New("error could not find a compatible signing method")
