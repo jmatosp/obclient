@@ -28,10 +28,15 @@ func (c *ClientRegisterBuilder) Build() (ClientRegister, error) {
 		return nil, err
 	}
 
+	softwareStatement, err := c.makeSoftwareStatement(config)
+	if err != nil {
+		return nil, err
+	}
+
 	return NewClientRegisterer(
 		config.RegistrationEndpoint,
 		config.Issuer,
-		c.makeSoftwareStatement(),
+		softwareStatement,
 		c.makeSecuredTransport(),
 	), nil
 }
@@ -121,18 +126,23 @@ func (c *ClientRegisterBuilder) WithRootCAs(rootCAs []string) *ClientRegisterBui
 	return c
 }
 
-func (c *ClientRegisterBuilder) makeSoftwareStatement() SoftwareStatement {
-	signer := NewSafeCertificates(
+func (c *ClientRegisterBuilder) makeSoftwareStatement(config Configuration) (SoftwareStatement, error) {
+	certificate := NewSafeCertificates(
 		c.sigPublicKeyFile,
 		c.sigPrivateKeyFile,
 	)
+
+	signer, err := NewSigner(certificate, config.ObjectSignAlgSupported)
+	if err != nil {
+		return nil, err
+	}
 
 	return NewSoftwareStatement(
 		c.softwareStatementID,
 		c.softwareStatementName,
 		c.redirectUrl,
-		NewRS256Singer(signer),
-	)
+		signer,
+	), nil
 }
 
 func (c *ClientRegisterBuilder) makeSecuredTransport() Transport {

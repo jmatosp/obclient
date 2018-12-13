@@ -8,18 +8,18 @@ Simple command line tool (cmd/tool) to list accounts and transactions
 
 ### Usage
 
-Clone this repository and build with
+Clone this repository and build:
 
 `go build -o obcli cmd/tool/main.go`
 
 Copy `sample.config.json` to `config.json` edit file with your configuration.
 
 
-First register your software client with 
+First register your software client: 
 
 `./obcli register`
 
-Then go ask user consent to access open banking, this will open a browser so you login and give consent to use APIs 
+Then go ask user consent to access open banking, this will open a browser so you login and give consent to use APIs.
 
 `./obcli auth`
 

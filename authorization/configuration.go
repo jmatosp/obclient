@@ -7,10 +7,11 @@ import (
 )
 
 type Configuration struct {
-	AuthorizationEndpoint string `json:"authorization_endpoint"`
-	RegistrationEndpoint  string `json:"registration_endpoint"`
-	TokenEndpoint         string `json:"token_endpoint"`
-	Issuer                string `json:"issuer"`
+	AuthorizationEndpoint  string   `json:"authorization_endpoint"`
+	RegistrationEndpoint   string   `json:"registration_endpoint"`
+	TokenEndpoint          string   `json:"token_endpoint"`
+	Issuer                 string   `json:"issuer"`
+	ObjectSignAlgSupported []string `json:"request_object_signing_alg_values_supported"`
 }
 
 var NoConfiguration = Configuration{}
